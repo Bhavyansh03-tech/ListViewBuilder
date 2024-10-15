@@ -79,13 +79,21 @@ class BoxItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      padding: const EdgeInsets.fromLTRB(8, 5, 8, 20),
       child: Container(
           height: 200,
           alignment: Alignment.center,
           decoration: BoxDecoration(
               color: Colors.deepPurple[200],
-              borderRadius: BorderRadius.circular(30)
+              borderRadius: BorderRadius.circular(30),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade500,
+                  offset: const Offset(4.0, 4.0),
+                  blurRadius: 15,
+                  spreadRadius: 1.0,
+                )
+              ]
           ),
         child: Text(txt, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),),
       ),
@@ -104,8 +112,8 @@ class CircleItem extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.deepPurple[200],
-            shape: BoxShape.circle
+          color: Colors.deepPurple[200],
+          shape: BoxShape.circle
         ),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
